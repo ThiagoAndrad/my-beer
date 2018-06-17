@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: thiagoandrad
+      changes:
+        - createTable:
+            tableName: points_of_sale
+            columns:
+              - column:
+                  name: id
+                  type: serial
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: trading_name
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: owner_name
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: document
+                  type: varchar(30)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: address
+                  type: geometry
+                  constraints:
+                    nullable: false
+              - column:
+                  name: coverage_area
+                  type: geometry
+                  constraints:
+                    nullable: false
